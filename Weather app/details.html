@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link href="src/style.css" rel="stylesheet" type="text/css" />
+    <script
+      src="https://kit.fontawesome.com/b874db6db6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600&family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container hero-image overlay">
+      <div class="row date-time">
+        <div class="col-6">
+          <div class="date" id="date">July 5, 2021</div>
+        </div>
+        <div class="col-6">
+          <div class="time" id="time">5:30 p.m.</div>
+        </div>
+      </div>
+      <div class="row city-name">
+        <h2 id="cityName">Brooklyn, NY</h2>
+      </div>
+      <div class="row city-highlights">
+        <div class="col-12 temp-conditions">
+          <div class="row temp">
+            <h1>
+              <span id="temp"> 84</span
+              ><sup
+                ><small
+                  ><a href="#" id="fTemp">°F</a>/<a href="#" id="cTemp"
+                    >C</a
+                  ></small
+                ></sup
+              >
+            </h1>
+          </div>
+          <div class="row conditions">
+            <img src="src/images/sunny.png" alt="Mostly sunny" />
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="moreDetails px-4">
+        <div class="row">
+          <div class="col-6">Feels like</div>
+          <div class="col-6 column2">88°</div>
+          <hr />
+        </div>
+        <div class="row">
+          <div class="col-6">Humidity</div>
+          <div class="col-6 column2">53%</div>
+          <hr />
+        </div>
+        <div class="row">
+          <div class="col-6">Precipitation</div>
+          <div class="col-6 column2">60%</div>
+          <hr />
+        </div>
+        <div class="row">
+          <div class="col-6">Wind</div>
+          <div class="col-6 column2">NW 2 mph</div>
+          <hr />
+        </div>
+        <div class="row">
+          <div class="col-6">Wind Gusts</div>
+          <div class="col-6 column2">4 mph</div>
+          <hr />
+        </div>
+        <div class="row">
+          <div class="col-6">UV Index</div>
+          <div class="col-6 column2">4 (Moderate)</div>
+          <hr />
+        </div>
+        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
