@@ -1,19 +1,25 @@
+#root {
+  background-color: #e0ebfa;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
 .container {
-  width: 40%;
+  max-width: 600px;
   height: 725px;
-  border: solid 1px #444;
   border-radius: 8px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
   font-family: "Catamaran", sans-serif;
   margin-top: 10px;
-  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
   padding: 30px;
-  color: #444;
+  color: rgb(36, 35, 35);
 }
-.hero-image {
+.background-image {
   position: relative;
   background: url("./images/ningyu-he-MmQFBBtCyFA-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  opacity: 0.9;
 }
 
 .date,
@@ -75,12 +81,23 @@ small {
   text-align: center;
   margin-right: 25px;
   font-size: 17px;
+  margin-top: 0;
 }
 
 .conditions img {
-  width: 75px;
   display: block;
   margin: 0 auto;
+  width: 75px;
+  padding-bottom: 5px;
+}
+label {
+  padding-top: 10px;
+}
+#current-conditions {
+  font-size: 18px;
+}
+label::first-letter {
+  text-transform: capitalize;
 }
 .details {
   margin-top: 10px;
@@ -113,12 +130,12 @@ button a:hover {
 }
 
 .forecastLabel {
-  margin-top: 15px;
+  margin-top: 20px;
   margin-left: 5px;
 }
 .forecastDetails {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .forecastIcon img {
@@ -153,4 +170,7 @@ a {
 }
 footer {
   text-align: center;
+}
+footer a {
+  text-decoration: underline;
 }

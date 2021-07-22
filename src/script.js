@@ -13,7 +13,23 @@ let days = [
   "Saturday",
 ];
 
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 let day = days[now.getDay()];
+let month = months[now.getMonth()];
 let hour = now.getHours();
 let minutes = now.getMinutes();
 if (hour < 10) {
@@ -45,6 +61,8 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#current-conditions").innerHTML =
+    response.data.weather[0].description;
 }
 function search(city) {
   let apiKey = "54cae2bb0d0b7168b158d795db1580ea";
