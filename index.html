@@ -35,14 +35,15 @@
           </div>
         </div>
         <form id="search">
-          <div class="form-row search-bar">
-            <div class="col-9 bar">
+          <div class="form-row search-bar" autofocus="off">
+            <div class="col-10 bar">
               <input
                 id="cities"
                 class="form-control search"
                 type="search"
                 placeholder="Search cities..."
                 aria-label="Search"
+                autocomplete="off"
               />
             </div>
             <div class="icons col-auto">
@@ -60,40 +61,49 @@
           <h2 id="cityName">Brooklyn, NY</h2>
         </div>
         <div class="row city-highlights">
-          <div class="col-12 temp-conditions">
-            <div class="row temp">
-              <h1>
-                <span id="temp"> 84</span
-                ><sup
-                  ><small
-                    ><a href="#" id="fTemp">°F</a>/<a href="#" id="cTemp"
-                      >C</a
-                    ></small
-                  ></sup
-                >
-              </h1>
+          <div class="col-6">
+            <div class="row">
+              <div class="col-6">
+                <div class="temp">
+                  <h1>
+                    <span id="temp"> 84</span
+                    ><sup
+                      ><small
+                        ><a href="#" id="fTemp">°F</a>/<a href="#" id="cTemp"
+                          >C</a
+                        ></small
+                      ></sup
+                    >
+                  </h1>
+                </div>
+              </div>
+              <div class="col-6">
+                <ul>
+                  <li>Feels like <span id="feelsLike">Feels like 88°</span></li>
+                  <li>Hi/Lo: <span id="hi-lo">85°/71°</span></li>
+                </ul>
+              </div>
             </div>
-            <div class="conditions">
-              <img src="src/images/sunny.png" alt="Mostly sunny" />
-              <label><span id="current-conditions"></span></label>
+          </div>
+
+          <div class="col-6 conditions">
+            <div class="row">
+              <div class="col-6">
+                <img src="#" alt="Mostly sunny" id="icon" />
+              </div>
+              <div class="col-6">
+                <ul>
+                  <li><span id="current-conditions"></span></li>
+                  <li>Humidity: <span id="humidity">53%</span>%</li>
+                  <li>Wind: <span id="wind"></span> km/h</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
         <br />
-        <div class="row details mt-4">
-          <div class="col-6">
-            <p>Feels like <span id="feelsLike">Feels like 88°</span></p>
-            <p>Hi/Lo: <span id="hi-lo">85°/71°</span></p>
-          </div>
-          <div class="col-6">
-            <p>Humidity: <span id="humidity">53%</span>%</p>
-            <p>Wind: <span id="wind"></span> km/h</p>
-          </div>
-        </div>
 
-        <div class="row forecastLabel">
-          <h5 class="col-12">6 Day Forecast</h5>
-        </div>
+        <hr />
         <div class="row forecastDetails">
           <div class="col-2 px-3">
             <div class="day">

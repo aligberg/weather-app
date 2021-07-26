@@ -30,6 +30,8 @@ let months = [
 
 let day = days[now.getDay()];
 let month = months[now.getMonth()];
+let date = now.getDate();
+let year = now.getFullYear();
 let hour = now.getHours();
 let minutes = now.getMinutes();
 if (hour < 10) {
@@ -38,7 +40,7 @@ if (hour < 10) {
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
-currentDay.innerHTML = day;
+currentDay.innerHTML = `${day}, ${month} ${date} ${year}`;
 currentTime.innerHTML = `${hour}:${minutes}`;
 
 //search bar
@@ -56,6 +58,12 @@ function showWeather(response) {
     response.data.main.temp_min
   )}˚`;
   let hiLoElement = document.querySelector("#hi-lo");
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
   hiLoElement.innerHTML = hiLo;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(

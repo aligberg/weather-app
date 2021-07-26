@@ -1,25 +1,19 @@
 #root {
-  background-color: #e0ebfa;
   box-sizing: border-box;
   padding: 30px;
 }
 
 .container {
-  max-width: 600px;
-  height: 725px;
-  border-radius: 8px;
+  max-width: 800px;
+  border-radius: 20px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
   font-family: "Catamaran", sans-serif;
   margin-top: 10px;
   padding: 30px;
   color: rgb(36, 35, 35);
-}
-.background-image {
-  position: relative;
-  background: url("./images/ningyu-he-MmQFBBtCyFA-unsplash.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.9;
+  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+
+  color: #272343;
 }
 
 .date,
@@ -43,8 +37,9 @@
 .search {
   border-radius: 20px;
   padding-left: 25px;
-  background-color: rgb(157, 166, 179, 0.3);
+
   border: solid 0.5px #444;
+  height: 43px;
 }
 .icons {
   display: inline-block;
@@ -57,29 +52,35 @@
   border: none;
   font-size: 20px;
 }
-.city-name {
-  text-align: center;
-  text-transform: capitalize;
-}
-.city-highlights {
-  text-align: center;
-}
 .city-name h2 {
-  font-size: 40px;
+  text-align: left;
+  text-transform: capitalize;
+  font-size: 45px;
   font-weight: 100;
   margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 40px;
   font-family: "Montserrat", sans-serif;
 }
+.city-highlights {
+  text-align: left;
+}
+
 .temp h1 {
   font-size: 100px;
+  text-align: right;
 }
 small {
   font-size: 20px;
 }
-
+li {
+  list-style: none;
+}
+ul {
+  padding-top: 30px;
+  margin-left: -30px;
+}
 .conditions {
-  text-align: center;
-  margin-right: 25px;
   font-size: 17px;
   margin-top: 0;
 }
@@ -87,24 +88,16 @@ small {
 .conditions img {
   display: block;
   margin: 0 auto;
-  width: 75px;
+  float: right;
+  width: 130px;
   padding-bottom: 5px;
 }
-label {
-  padding-top: 10px;
-}
+
 #current-conditions {
   font-size: 18px;
 }
-label::first-letter {
+li::first-letter {
   text-transform: capitalize;
-}
-.details {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-align: center;
-  line-height: 10px;
-  font-size: 18px;
 }
 
 .moreDetailsButton button {
