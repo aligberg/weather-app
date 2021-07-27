@@ -11,7 +11,12 @@
   margin-top: 10px;
   padding: 30px;
   color: rgb(36, 35, 35);
-  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(215, 223, 252) 0%,
+    rgb(255, 255, 255) 0%,
+    rgb(215, 223, 252) 84%
+  );
 
   color: #272343;
 }
@@ -112,7 +117,7 @@ li::first-letter {
 
 button a {
   text-decoration: none;
-  color: #444;
+  color: #272343;
 }
 button:hover {
   transition: 0.25s ease-in-out;
@@ -136,34 +141,22 @@ button a:hover {
   padding-bottom: 8px;
 }
 
-.moreDetails {
-  width: 400px;
-  display: block;
-  margin: 0 auto;
-  padding-top: 10px;
-  font-size: 18px;
-}
-.column2 {
-  text-align: right;
-}
-
-.moreDetails a {
-  color: #444;
-}
-.moreDetails a:hover {
-  color: rgb(105, 105, 105);
-}
-
 .forecastIcon {
   opacity: 80%;
 }
 a {
   text-decoration: none;
-  color: #444;
+  color: #272343;
 }
 footer {
   text-align: center;
 }
 footer a {
   text-decoration: underline;
+}
+
+.temp .active {
+  color: #272343;
+  cursor: default;
+  font-size: 22px;
 }

@@ -48,8 +48,10 @@ function showWeather(response) {
   console.log(response.data.main.temp);
   let temperature = Math.round(response.data.main.temp);
   let mainTemp = document.querySelector("#temp");
+  fahrenheitTemp = response.data.main.temp;
   mainTemp.innerHTML = `${temperature}`;
   h2.innerHTML = response.data.name;
+
   console.log(response);
   let feelsLike = Math.round(response.data.main.feels_like);
   let feelsLikeElement = document.querySelector("#feelsLike");
@@ -84,8 +86,6 @@ function handleSubmit(event) {
   search(city);
 }
 let h2 = document.querySelector("#cityName");
-let searchBar = document.querySelector("#search");
-searchBar.addEventListener("submit", handleSubmit);
 
 function showPosition(position) {
   let latitude = position.coords.latitude;
@@ -105,19 +105,28 @@ locationButton.addEventListener("click", getCurrentPosition);
 //F/C
 function fToC(event) {
   event.preventDefault();
-  let temperature = currentTemp.innerHTML;
-  currentTemp.innerHTML = Math.round(((temperature - 32) * 5) / 9);
+  cTemp.classList.add("active");
+  fTemp.classList.remove("active");
+  let temperatureElement = document.querySelector("#temp");
+  let celciusTemp = ((fahrenheitTemp - 32) * 5) / 9;
+  temperatureElement.innerHTML = Math.round(celciusTemp);
 }
+
 function cToF(event) {
   event.preventDefault();
-  currentTemp.innerHTML = 84;
-  fTemp.innerHTML = "<strong>F</strong>";
+  let temperatureElement = document.querySelector("#temp");
+  cTemp.classList.remove("active");
+  fTemp.classList.add("active");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
+
+let fahrenheitTemp = null;
+
+let searchBar = document.querySelector("#search");
+searchBar.addEventListener("submit", handleSubmit);
 
 let fTemp = document.querySelector("#fTemp");
 let cTemp = document.querySelector("#cTemp");
-let currentTemp = document.querySelector("#temp");
 cTemp.addEventListener("click", fToC);
 fTemp.addEventListener("click", cToF);
-
 search("New York");
