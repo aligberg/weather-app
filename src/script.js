@@ -45,7 +45,8 @@ currentTime.innerHTML = `${hour}:${minutes}`;
 
 //forecast
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat", "Sun"];
@@ -74,6 +75,13 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "54cae2bb0d0b7168b158d795db1580ea";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 //search bar
@@ -106,7 +114,10 @@ function showWeather(response) {
   );
   document.querySelector("#current-conditions").innerHTML =
     response.data.weather[0].description;
+
+  getForecast(response.data.coord);
 }
+
 function search(city) {
   let apiKey = "54cae2bb0d0b7168b158d795db1580ea";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
@@ -163,4 +174,3 @@ let cTemp = document.querySelector("#cTemp");
 cTemp.addEventListener("click", fToC);
 fTemp.addEventListener("click", cToF);
 search("New York");
-displayForecast();

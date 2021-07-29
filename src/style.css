@@ -11,11 +11,7 @@
   margin-top: 10px;
   padding: 30px;
   color: rgb(36, 35, 35);
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(255, 252, 214) 0%,
-    rgba(255, 102, 102, 0.44) 90%
-  );
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 
   color: #272343;
 }
@@ -41,7 +37,8 @@
 .search {
   border-radius: 20px;
   padding-left: 25px;
-
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  opacity: 0.7;
   border: solid 0.5px #444;
   height: 43px;
 }
