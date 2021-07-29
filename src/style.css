@@ -13,9 +13,8 @@
   color: rgb(36, 35, 35);
   background: radial-gradient(
     circle at 10% 20%,
-    rgb(215, 223, 252) 0%,
-    rgb(255, 255, 255) 0%,
-    rgb(215, 223, 252) 84%
+    rgb(255, 252, 214) 0%,
+    rgba(255, 102, 102, 0.44) 90%
   );
 
   color: #272343;
@@ -105,44 +104,22 @@ li::first-letter {
   text-transform: capitalize;
 }
 
-.moreDetailsButton button {
-  display: block;
-  margin: 0 auto;
-  padding: 8px 79px 8px 79px;
-  border-radius: 20px;
-  border: solid 1px #444;
-  font-size: 16px;
-  background-color: rgb(157, 166, 179, 0.3);
-}
-
-button a {
-  text-decoration: none;
-  color: #272343;
-}
-button:hover {
-  transition: 0.25s ease-in-out;
-  background-color: rgb(157, 166, 179, 0.7);
-}
-button a:hover {
-  color: #444;
-}
-
-.forecastLabel {
-  margin-top: 20px;
-  margin-left: 5px;
-}
-.forecastDetails {
-  text-align: center;
+.weatherForecast {
   margin-top: 15px;
+  text-align: center;
+}
+
+.forecastDay {
+  opacity: 0.6;
 }
 
 .forecastIcon img {
+  text-align: center;
   width: 35px;
-  padding-bottom: 8px;
+  margin: 5px;
 }
-
-.forecastIcon {
-  opacity: 80%;
+.forecastLow {
+  opacity: 0.6;
 }
 a {
   text-decoration: none;

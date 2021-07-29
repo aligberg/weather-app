@@ -43,6 +43,39 @@ if (minutes < 10) {
 currentDay.innerHTML = `${day}, ${month} ${date} ${year}`;
 currentTime.innerHTML = `${hour}:${minutes}`;
 
+//forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2">
+            
+              <div class="forecastDay">${day}</div>
+              <div class="forecastIcon my-1">
+                <img src="src/images/sunny.png" alt="Mostly sunny" width="50" />
+              </div>
+              <div class="forecastTemp">
+                <p>
+                  <span class="forecastHigh">Hi</span>˚/<span
+                    class="forecastLow"
+                    >lo</span
+                  >˚
+                </p>
+              </div>
+            
+          </div>
+    `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //search bar
 function showWeather(response) {
   console.log(response.data.main.temp);
@@ -130,3 +163,4 @@ let cTemp = document.querySelector("#cTemp");
 cTemp.addEventListener("click", fToC);
 fTemp.addEventListener("click", cToF);
 search("New York");
+displayForecast();
