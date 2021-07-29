@@ -105,6 +105,9 @@ li::first-letter {
   margin-top: 15px;
   text-align: center;
 }
+.weatherForecast div img {
+  width: 50px;
+}
 
 .forecastDay {
   opacity: 0.6;

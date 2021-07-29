@@ -45,32 +45,46 @@ currentTime.innerHTML = `${hour}:${minutes}`;
 
 //forecast
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    console.log(forecastDay);
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
     <div class="col-2">
             
-              <div class="forecastDay">${day}</div>
+              <div class="forecastDay">${formatDay(forecastDay.dt)}</div>
               <div class="forecastIcon my-1">
-                <img src="src/images/sunny.png" alt="Mostly sunny" width="50" />
+                <img src="http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png" />
               </div>
               <div class="forecastTemp">
                 <p>
-                  <span class="forecastHigh">Hi</span>˚/<span
+                  <span class="forecastHigh">${Math.round(
+                    forecastDay.temp.max
+                  )}</span>˚/<span
                     class="forecastLow"
-                    >lo</span
+                    >${Math.round(forecastDay.temp.min)}</span
                   >˚
                 </p>
               </div>
             
           </div>
     `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -80,7 +94,7 @@ function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "54cae2bb0d0b7168b158d795db1580ea";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
-  console.log(apiUrl);
+
   axios.get(apiUrl).then(displayForecast);
 }
 
